@@ -13,5 +13,6 @@
   <property name="hibernate.format_sql">true</property>
   <!-- <property name="hibernate.hbm2ddl.auto">create</property> -->
   <mapping class="com.padmini.database.Login"/>
+  <mapping class="com.padmini.database.Student"/> 
  </session-factory>
 </hibernate-configuration>

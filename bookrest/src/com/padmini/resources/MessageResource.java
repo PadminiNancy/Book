@@ -22,6 +22,8 @@ import javax.ws.rs.core.UriInfo;
 
 import com.padmini.database.Login;
 import com.padmini.database.LoginDao;
+import com.padmini.database.Student;
+import com.padmini.database.StudentDao;
 import com.padmini.model.Message;
 import com.padmini.resources.beans.MessageFilterBean;
 import com.padmini.service.MessageService;
@@ -32,7 +34,7 @@ public class MessageResource {
 	
 	MessageService ms = new MessageService();
 	LoginDao ld = new LoginDao();
-	
+	StudentDao sd = new StudentDao();
 	
 @GET
 @Produces(MediaType.APPLICATION_JSON)
@@ -68,6 +70,7 @@ public class MessageResource {
  public Response addMessage(Login l, @Context UriInfo uriInfo)
  {	 
 	Login newUser = ld.addUser(l);
+	
 	String newId = String.valueOf(newUser.getLastname());
 	URI uri = uriInfo.getAbsolutePathBuilder().path(newId).build();
    return Response.created(uri)
