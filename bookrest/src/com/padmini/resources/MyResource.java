@@ -21,7 +21,7 @@ import com.padmini.database.StudentDao;
 import com.padmini.model.Message;
 import com.padmini.service.MessageService;
 
-@Path("/teacher")
+@Path("teacher")
 public class MyResource {
 
 	MessageService ms = new MessageService();
@@ -54,7 +54,7 @@ public class MyResource {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	 public Student addStudent(@PathParam("messageId") int tid, Student s)
+	 public Student addStudent(@PathParam("teacherId") int tid, Student s)
 	 {	 
 		//Login newUser = ld.addUser(l);
 		Student newStud = sd.addUser(s,tid);

@@ -28,8 +28,8 @@ public class Login implements java.io.Serializable{
 	@Column(name = "password")
 	private String password;
 	
-	@OneToMany(mappedBy = "Student", cascade = CascadeType.ALL)
-    private Set studMarks = new HashSet(0);
+	@OneToMany(mappedBy = "login", cascade = CascadeType.ALL)
+    private Set<Student> studMarks = new HashSet(0);
 	
 	public Login()
 	{}
@@ -50,7 +50,7 @@ public class Login implements java.io.Serializable{
 		this.tid = tid;
 	}
 
-	public Set getStudMarks() {
+	public Set<Student> getStudMarks() {
 		return studMarks;
 	}
 
